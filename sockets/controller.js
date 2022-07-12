@@ -5,7 +5,7 @@ const socketController = (socket) => {
     });
 
     socket.on('send-message', (payload, callback) => {
-        console.log('payload', payload);
+        console.log('payload received', payload);
         const id = 123456789;
         callback(id);
 

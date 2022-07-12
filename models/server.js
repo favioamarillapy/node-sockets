@@ -9,7 +9,12 @@ class Server {
         this.app = express();
         this.port = 8080;
         this.server = require('http').createServer(this.app);
-        this.io = require('socket.io')(this.server);
+        this.io = require('socket.io')(this.server, {
+            cors: {
+                origin: "*",
+                methods: ["GET", "POST"]
+            }
+        });
 
         this.paths = {};
 
